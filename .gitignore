@@ -1,0 +1,38 @@
+# Dependências e saídas reproduzíveis
+node_modules/
+dist/
+build/
+coverage/
+.vite/
+.cache/
+.npm/
+.parcel-cache/
+*.tsbuildinfo
+
+# Configuração privada: publicar somente o modelo sem valores reais
+.env
+.env.*
+!.env.example
+.envrc
+
+# Credenciais, chaves e certificados
+credentials*.json
+secrets*.json
+*token*.json
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+
+# Logs, temporários, ferramentas locais e sistema
+*.log
+logs/
+temp/
+tmp/
+.sites-runtime/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
