@@ -20,6 +20,7 @@ export default function Contact() {
   const [success, setSuccess] = useState(false);
   const [ready, setReady] = useState(false);
   const endpoint = import.meta.env.VITE_CONTACT_ENDPOINT || "";
+  const contactEmail = "contato@hiatlas.com.br";
   useEffect(() => {
     setReady(true);
     const params = new URLSearchParams(location.search);
@@ -50,7 +51,7 @@ export default function Contact() {
       );
       setSuccess(true);
       setStatus(
-        "Mensagem enviada. Obrigado por compartilhar sua operação com a HiGamer.",
+        "Mensagem enviada. Obrigado por compartilhar sua operação com a HiAtlas.",
       );
       form.reset();
       setSelected([]);
@@ -82,7 +83,7 @@ export default function Contact() {
           </h1>
           <p>
             Cada empresa possui processos, desafios e necessidades diferentes.
-            Conte para a HiGamer um pouco sobre sua operação e vamos avaliar
+            Conte para a HiAtlas um pouco sobre sua operação e vamos avaliar
             como o HiAtlas pode ajudar.
           </p>
         </div>
@@ -99,6 +100,12 @@ export default function Contact() {
               sobre sua operação?
             </h2>
             <p>Queremos entender o processo antes de propor a tecnologia.</p>
+
+            <div className="channel-note">
+              Atendimento direto:{" "}
+            <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+            </div>
+            
             {[
               [
                 "01",
@@ -126,9 +133,8 @@ export default function Contact() {
             ))}
             {!endpoint && (
               <div className="channel-note">
-                O atendimento por este formulário está em preparação. Você pode
-                explorar os campos, mas o envio será liberado quando o canal
-                oficial estiver configurado.
+                O atendimento por este formulário está em preparação. Enquanto isso,
+                você pode falar conosco pelo e-mail contato@hiatlas.com.br.
               </div>
             )}
           </aside>
